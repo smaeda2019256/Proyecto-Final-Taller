@@ -1,0 +1,15 @@
+{
+  "name": "proyecto-final-taller",
+  "version": "1.0.0",
+  "description": "Repositorio del trabajo para el Proyecto Final de TALLER",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.1.3"
+  }
+}
