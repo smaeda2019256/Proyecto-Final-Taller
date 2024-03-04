@@ -15,3 +15,18 @@ export const getUsers = async (req = request, res = response) => {
         listaUsers
     });
 }
+
+export const postUser = async (req, res) => {
+    const {name, email, password, rol} = req.body;
+    const userNew = new User({name, email, password, rol});
+
+    const salt = bcrypt.genSaltSync();
+    userNew.password = bcrypt.hashSync(password, salt);
+
+    await userNew.save();
+
+    res.status(200).json({
+        msg: 'User ADDED successfully',
+        userNew
+    });
+}
