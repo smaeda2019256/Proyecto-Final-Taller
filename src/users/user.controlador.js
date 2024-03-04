@@ -30,3 +30,20 @@ export const postUser = async (req, res) => {
         userNew
     });
 }
+
+export const putUser = async (req = request, res = response) => {
+    const {id} = req.params;
+    const {_id, estado, ...resto} = req.body;
+
+    if(resto.password) {
+        const salt = bcrypt.genSaltSync();
+        resto.password = bcrypt.hashSync(resto.password, salt);
+    }
+
+    const userEdit = await User.findByIdAndUpdate(id, resto);
+
+    res.status(200).json({
+        msg: 'User UPDATED successfully',
+        userEdit
+    });
+}
