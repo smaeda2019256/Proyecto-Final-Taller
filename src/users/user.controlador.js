@@ -47,3 +47,14 @@ export const putUser = async (req = request, res = response) => {
         userEdit
     });
 }
+
+export const deleteUser = async (req = request, res = response) => {
+    const {id} = req.params;
+
+    const userDel = await User.findByIdAndUpdate(id, {estado: false});
+
+    res.status(200).json({
+        msg: 'User successfully REMOVED',
+        userDel
+    });
+}
