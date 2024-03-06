@@ -1,2 +1,10 @@
 import { validationResult } from "express-validator";
-import { response, request } from "express";
+
+export const validarCampos = (req, res, next) => {
+    const error = validationResult(req);
+    if(!error.isEmpty()){
+        return res.status(400).json(error);
+    }
+
+    next();
+}
