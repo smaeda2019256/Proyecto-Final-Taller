@@ -20,4 +20,23 @@ router.post('/',
     ], postUser
 );
 
+router.put('/:id',
+    [
+        check('id', 'Not a valid ID').isMongoId(),
+        check('id').custom( existsUserById ),
+        check('rol').custom( isRoleValid ),
+        validarCampos
+    ], putUser
+);
+
+router.delete('/:id',
+    [
+        validateJWT,
+        tieneRole('ADMIN_ROLE', 'COORDINATION_ROLE'),
+        check('id', 'Not a valid ID').isMongoId(),
+        check('id').custom( existsUserById ),
+        validarCampos
+    ], deleteUser
+);
+
 export default router;
