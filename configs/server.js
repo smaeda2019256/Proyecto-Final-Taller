@@ -13,7 +13,7 @@ class Server {
         this.app = express();
         this.port = process.env.PORT;
         this.userPath = '/pf/v2/users';
-        this.authPath = '/pd/v2/auth';
+        this.authPath = '/pf/v2/auth';
 
         this.conectarDB();
         this.middlewares();
