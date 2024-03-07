@@ -1,0 +1,76 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Users",
+    "dateExported": "2024-03-07T02:10:00.754Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "74f11fd7-4639-4647-9ac9-e02cdf37a421",
+            "colId": "6e5950d5-fa27-4026-ac8f-ab5d8a1045fa",
+            "containerId": "",
+            "name": "POST User",
+            "url": "localhost:3000/pf/v2/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-07T01:59:57.892Z",
+            "modified": "2024-03-07T02:02:37.856Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Santiago Maeda\",\n    \"email\": \"smaeda@gmail.com\",\n    \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "4e726d6a-c0d0-4a6d-a2d0-b71721c2536d",
+            "colId": "6e5950d5-fa27-4026-ac8f-ab5d8a1045fa",
+            "containerId": "",
+            "name": "GET Users",
+            "url": "localhost:3000/pf/v2/users",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-07T02:03:06.615Z",
+            "modified": "2024-03-07T02:03:27.151Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f14c4fcb-49e4-4903-9e7d-d14acb60ef11",
+            "colId": "6e5950d5-fa27-4026-ac8f-ab5d8a1045fa",
+            "containerId": "",
+            "name": "PUT Users",
+            "url": "localhost:3000/pf/v2/users/65e9203df47a0ff528867475",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-07T02:04:54.203Z",
+            "modified": "2024-03-07T02:05:50.349Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Didiee Estrada\",\n    \"email\": \"destrada@gmail.com\",\n    \"password\": \"123456\",\n    \"rol\": \"ADMIN_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4453fcbc-a1e9-4654-9c2f-08624d6dc2c5",
+            "colId": "6e5950d5-fa27-4026-ac8f-ab5d8a1045fa",
+            "containerId": "",
+            "name": "DELETE Users",
+            "url": "localhost:3000/pf/v2/users/",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-07T02:07:29.858Z",
+            "modified": "2024-03-07T02:07:46.731Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

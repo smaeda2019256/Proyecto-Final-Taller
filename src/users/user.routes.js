@@ -32,7 +32,7 @@ router.put('/:id',
 router.delete('/:id',
     [
         validateJWT,
-        tieneRole('ADMIN_ROLE', 'COORDINATION_ROLE'),
+        hasRole('ADMIN_ROLE', 'COORDINATION_ROLE'),
         check('id', 'Not a valid ID').isMongoId(),
         check('id').custom( existsUserById ),
         validarCampos
