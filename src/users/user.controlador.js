@@ -31,6 +31,21 @@ export const postUser = async (req, res) => {
     });
 }
 
+export const postUserClient = async (req, res) => {
+    const {name, email, password} = req.body;
+    const userClient = new User({name, email, password});
+
+    const salt = bcrypt.genSaltSync();
+    userClient.password = bcrypt.hashSync(password, salt);
+
+    await userClient.save();
+
+    res.status(200).json({
+        msg: 'User Client ADDED successfully',
+        userClient
+    });
+}
+
 export const putUser = async (req = request, res = response) => {
     const {id} = req.params;
     const {_id, estado, ...resto} = req.body;
@@ -49,12 +64,12 @@ export const putUser = async (req = request, res = response) => {
 }
 
 export const deleteUser = async (req = request, res = response) => {
-    const {id} = req.params;
+    const { id } = req.params;
 
-    const userDel = await User.findByIdAndUpdate(id, {estado: false});
+    const userDel = await User.findByIdAndUpdate(id, { estado: false });
 
-    res.status(200).json({
-        msg: 'User successfully REMOVED',
+    res.json({
+        msg: 'DELETE eliminar user',
         userDel
     });
 }

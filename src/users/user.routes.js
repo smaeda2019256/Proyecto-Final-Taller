@@ -16,6 +16,17 @@ router.post('/',
         check('password', 'The password must be more than 6 digits long').isLength( { min: 6 } ),
         check('email', 'The email is not valid').isEmail(),
         check('email').custom( existsEmail ),
+        check( 'rol' ).custom( isRoleValid ),
+        validarCampos,
+    ], postUser
+);
+
+router.post('/client',
+    [
+        check('name', 'The name ir required').not().isEmpty(),
+        check('password', 'The password must be more than 6 digits long').isLength( { min: 6 } ),
+        check('email', 'The email is not valid').isEmail(),
+        check('email').custom( existsEmail ),
         validarCampos,
     ], postUser
 );
@@ -29,7 +40,7 @@ router.put('/:id',
     ], putUser
 );
 
-router.delete('/:id',
+router.delete('/delete/:id',
     [
         validateJWT,
         hasRole('ADMIN_ROLE', 'COORDINATION_ROLE'),
