@@ -21,7 +21,7 @@ router.put('/:id', [
     validateJWT,
     isAdminRole,
     check('id', 'Not a Valid ID').isMongoId(),
-    check('nombre', 'The name is required').not().isEmpty(),
+    check('name', 'The name is required').not().isEmpty(),
     check('id').custom( existProductById ),
     validarCampos
 ], putProduct);
