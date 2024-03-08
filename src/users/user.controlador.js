@@ -69,7 +69,7 @@ export const deleteUser = async (req = request, res = response) => {
     const userDel = await User.findByIdAndUpdate(id, { estado: false });
 
     res.json({
-        msg: 'DELETE eliminar user',
+        msg: 'User DELETED successfully',
         userDel
     });
 }

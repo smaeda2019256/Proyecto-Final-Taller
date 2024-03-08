@@ -32,5 +32,7 @@ export const hasRole = (...roles) => {
                 msg: `The service requires one of the following roles: ${roles}`
             })
         }
+
+        next();
     }
 }

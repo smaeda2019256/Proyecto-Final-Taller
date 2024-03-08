@@ -33,6 +33,7 @@ router.post('/client',
 
 router.put('/:id',
     [
+        validateJWT,
         check('id', 'Not a valid ID').isMongoId(),
         check('id').custom( existsUserById ),
         check('rol').custom( isRoleValid ),
