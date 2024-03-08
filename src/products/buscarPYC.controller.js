@@ -39,3 +39,30 @@ export const searchForCategory = async (termino='', res) => {
     })
 }
 
+export const search = (req, res) => {
+    const {colection, termino} = req.params;
+
+    if(!colectionsPerm.includes(colection)){
+        return res.status(400).json({
+            msg: `The Colection: ${colection} not exits in the DB
+            The permitted collections are: ${colectionsPerm}`
+        });
+    }
+
+    switch (colection){
+        case 'users':
+        break;
+
+        case 'categories':
+            searchForCategory(termino, res)
+        break;
+
+        case 'products':
+            searchProduct(termino, res)
+        break;
+        default:
+            res.status(500).json({
+                msg: 'Forgot to do this search'
+            });
+    }
+}
