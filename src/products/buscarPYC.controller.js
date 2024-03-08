@@ -36,6 +36,7 @@ export const searchForCategory = async (termino='', res) => {
     const product = await Product.find({category: categoryFound.id});
 
     return res.json({
+        msg: "Category FOUND",
         product
     })
 }
