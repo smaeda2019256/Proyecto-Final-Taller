@@ -1,0 +1,29 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Login Users",
+    "dateExported": "2024-03-08T03:15:18.038Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "6692ceb8-0a8a-45c0-8ecd-95e7c84480db",
+            "colId": "0d507303-76f3-4be9-814e-76c538006ff3",
+            "containerId": "",
+            "name": "POST Login",
+            "url": "localhost:3000/pf/v2/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-07T03:37:38.553Z",
+            "modified": "2024-03-08T01:19:44.639Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"jcole@gmail.com\",\n    \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        }
+    ]
+}
