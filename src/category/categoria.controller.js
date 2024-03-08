@@ -48,3 +48,29 @@ export const getCategoryById = async (req = request, res = response) => {
   res.status(201).json( categoryById );
 
 }
+
+export const putCategory = async (req = request, res = response) => {
+
+    const {id} = req.params;
+    const {estado, user, ...resto } = req.body;
+
+    resto.name = resto.name.toUpperCase();
+    resto.user = req.user._id;
+
+    const categoryUpd = await Category.findByIdAndUpdate(id, resto, { new: true });
+
+    res.status(200).json({
+        msg: 'Category UPDATED successfully',
+        categoryUpd
+    })
+}
+
+export const deleteCategory = async (req = request, res = response) => {
+    const { id } = req.params;
+    const categoryDel = await Category.findByIdAndUpdate(id, { estado: false }, { new: true });
+
+    res.status(200).json({
+        msg: 'Category REMOVED successfully',
+        categoryDel
+    })
+}
