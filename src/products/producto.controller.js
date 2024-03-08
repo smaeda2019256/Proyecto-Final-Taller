@@ -67,3 +67,14 @@ export const putProduct = async (req = request, res = response) => {
 
 }
 
+export const deleteProducto = async (req = request, res = response) => {
+    const { id } = req.params;
+    const productDel = await Producto.findByIdAndUpdate( id, { estado: false}, { new: true } );
+
+   res.json({
+        msg: 'The Product was correctly REMOVED',
+        productDel
+   })
+
+}
+
