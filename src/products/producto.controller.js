@@ -39,3 +39,13 @@ export const postProducts = async (req = request, res = response) => {
 
     res.status(201).json(product);
 }
+
+export const getProductById = async (req, res ) => {
+
+    const { id } = req.params;
+    const prouductById = await Producto.findById(id)
+        .populate('user', 'name')
+        .populate('category', 'name');
+ 
+    res.status(201).json( prouductById );
+ }
