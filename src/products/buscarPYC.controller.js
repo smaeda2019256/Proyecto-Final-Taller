@@ -1,5 +1,5 @@
 import { request, response } from "express";
-import { ObjectId } from "mongoose";
+import { Types } from "mongoose";
 import Product from './producto.model.js';
 import Category from '../category/categoria.model.js';
 
@@ -8,7 +8,7 @@ export const colectionsPerm = [
 ];
 
 export const searchProduct = async(termino='', res) => {
-    const isID = ObjectId.isValid(termino);
+    const isID = Types.ObjectId.isValid(termino);
 
     if(isID){
         const product = await Product.findById(termino);
@@ -25,6 +25,7 @@ export const searchProduct = async(termino='', res) => {
     });
 
     res.json({
+        msg: "Product FOUND",
         results: products
     });
 }
