@@ -37,7 +37,10 @@ export const postProducts = async (req = request, res = response) => {
     const product = await Producto(data);
     await product.save();
 
-    res.status(201).json(product);
+    res.status(200).json({
+        msg: 'Product CREATED successfully',
+        product
+    })
 }
 
 export const getProductById = async (req, res ) => {

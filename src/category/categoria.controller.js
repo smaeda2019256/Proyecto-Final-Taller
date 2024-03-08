@@ -25,3 +25,26 @@ export const postCategory = async (req = request, res = response) => {
     })
 
 }
+
+export const getCategories = async (req = request, res = response) => {
+    const query = { estado: true };
+    const listCategories = await Promise.all([
+        Category.countDocuments(query),
+        Category.find(query).populate('user', 'name')
+    ]);
+
+    res.json({
+        msg: 'List - CATEGORIES',
+        listCategories
+    });
+
+}
+
+
+export const getCategoryById = async (req = request, res = response) => {
+  const { id } = req.params;
+  const categoryById = await Category.findById(id).populate('user', 'name');
+
+  res.status(201).json( categoryById );
+
+}
