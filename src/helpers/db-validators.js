@@ -1,6 +1,7 @@
 import User from '../users/user.model.js';
 import Role from '../users/role.js';
 import Producto from '../products/producto.model.js';
+import Categoria from '../category/categoria.model.js';
 
 export const isRoleValid = async (rol = '') => {
     const existeRol = await Role.findOne({rol});
@@ -25,8 +26,14 @@ export const existsUserById = async (id) => {
 
 export const existProductById = async(id) => {
     const existeProducto = await Producto.findById(id);
-
-    if ( !existeProducto ) {
+    if (!existeProducto ) {
         throw new Error(`The Product with id: ${ id } does not exist in DB`);
+    }
+}
+
+export const existsCategoryById = async(id) => {
+    const existeCategoria = await Categoria.findById(id);
+    if (!existeCategoria ) {
+        throw new Error(`The category with id: ${ id } does not exist in DB`);
     }
 }
