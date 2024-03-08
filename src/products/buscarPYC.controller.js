@@ -28,3 +28,14 @@ export const searchProduct = async(termino='', res) => {
         results: products
     });
 }
+
+export const searchForCategory = async (termino='', res) => {
+    const query = {name: termino.toUpperCase()};
+    const categoryFound = await Category.findOne(query);
+    const product = await Product.find({category: categoryFound.id});
+
+    return res.json({
+        product
+    })
+}
+
