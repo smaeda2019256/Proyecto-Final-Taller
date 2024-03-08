@@ -48,4 +48,22 @@ export const getProductById = async (req, res ) => {
         .populate('category', 'name');
  
     res.status(201).json( prouductById );
- }
+}
+
+export const putProduct = async (req = request, res = response) => {
+    const { id } = req.params;
+    const { estado, user, ...restoData } = req.body;
+
+    if ( restoData.name ) {
+        restoData.name = restoData.name.toUpperCase();
+        restoData.user = req.user._id;
+    }
+    const productUpd = await Producto.findByIdAndUpdate(id, restoData, { new: true });
+
+    res.status(201).json({
+        msg: 'The Product was UPDATED correctly',
+        productUpd
+    })
+
+}
+
