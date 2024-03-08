@@ -1,0 +1,37 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Search Product Name",
+    "dateExported": "2024-03-08T16:46:02.870Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "77cd1762-a3f4-4115-8d29-dadf54962843",
+            "colId": "bd3bc446-9dff-4c56-86f6-c3b138d8efdb",
+            "containerId": "",
+            "name": "GET Search Product For Name",
+            "url": "localhost:3000/pf/v2/search/products/PALA",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-08T14:54:27.862Z",
+            "modified": "2024-03-08T16:18:56.942Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "960a58ca-c209-4e38-bc53-6a5def308ff4",
+            "colId": "bd3bc446-9dff-4c56-86f6-c3b138d8efdb",
+            "containerId": "",
+            "name": "GET Search Product For Category",
+            "url": "localhost:3000/pf/v2/search/categories/TECNOLOGIA",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-08T16:08:11.148Z",
+            "modified": "2024-03-08T16:22:30.049Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
