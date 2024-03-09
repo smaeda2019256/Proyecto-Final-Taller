@@ -1,15 +1,15 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { getUsers, postUser, putUser, deleteUser, putUserClient, deleteUserClient } from "./user.controlador.js";
+import { getUsers, getUsersClients, postUser, putUser, deleteUser, putUserClient, deleteUserClient } from "./user.controlador.js";
 import { isRoleValid, existsEmail, existsUserById } from "../helpers/db-validators.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validateJWT } from "../middlewares/validar-jwt.js";
 import { hasRole } from "../middlewares/validar-roles.js";
-import { isAdminRole } from "../middlewares/validar-roles.js";
+import { isAdminRole, isClientRole } from "../middlewares/validar-roles.js";
 
 const router = Router();
 
-router.get('/', [validateJWT, isAdminRole], getUsers);
+router.get('/', getUsers);
 
 router.post('/',
     [
@@ -23,6 +23,9 @@ router.post('/',
 );
 
 //client
+
+router.get('/client', getUsersClients);
+
 router.post('/client',
     [
         check('name', 'The name ir required').not().isEmpty(),
@@ -36,6 +39,7 @@ router.post('/client',
 router.put('/client/:id',
     [
         validateJWT,
+        isClientRole,
         check('id', 'Not a valid ID').isMongoId(),
         check('id').custom(existsUserById),
         check('name', 'The name ir required').not().isEmpty(),
@@ -48,6 +52,7 @@ router.put('/client/:id',
 router.delete('/client/:id',
     [
         validateJWT,
+        isClientRole,
         check('id', 'Not a valid ID').isMongoId(),
         check('id').custom(existsUserById),
         validarCampos

@@ -3,15 +3,21 @@ import { check } from 'express-validator';
 import { getFacturasUsuarioEspecifico, getFacturas, postFactura } from './factura.controller.js';
 import { validateJWT } from '../middlewares/validar-jwt.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
-import { isAdminRole } from "../middlewares/validar-roles.js";
+import { isAdminRole, isClientRole } from "../middlewares/validar-roles.js";
 
 const router = Router();
 
 router.get('/',[
     validateJWT,
+    isAdminRole,
     validarCampos
 ], getFacturas );
 
+router.get('/client',[
+    validateJWT,
+    isClientRole,
+    validarCampos
+], getFacturas );
 
 router.get('/:userId', [
     validateJWT,

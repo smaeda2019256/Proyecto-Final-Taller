@@ -8,9 +8,11 @@ import { isAdminRole } from "../middlewares/validar-roles.js";
 
 const router = Router();
 
-router.get('/', getCategories );
+router.get('/', [validateJWT, isAdminRole], getCategories );
 
 router.get('/:id', [
+    validateJWT,
+    isAdminRole,
     check('id', 'Not a Valid ID').isMongoId(),
     check('id').custom( existsCategoryById ),
     validarCampos

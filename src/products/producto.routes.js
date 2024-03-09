@@ -2,19 +2,39 @@ import { Router } from "express";
 import { check } from "express-validator";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validateJWT } from "../middlewares/validar-jwt.js";
-import { isAdminRole } from "../middlewares/validar-roles.js";
-import { postProducts, getProducts, getProductById, deleteProducto, putProduct } from "./producto.controller.js";
+import { isAdminRole, isClientRole } from "../middlewares/validar-roles.js";
+import { postProducts, getProducts, getBestSellingProducts, getSoldOutProducts, getProductById, deleteProducto, putProduct } from "./producto.controller.js";
 import { existProductById } from "../helpers/db-validators.js";
 
 const router = Router();
 
 router.get('/', [validateJWT, isAdminRole, validarCampos], getProducts );
 
+router.get('/so', [
+    validateJWT,
+    isAdminRole,
+    validarCampos
+], getSoldOutProducts);
+
+router.get('/bs', [
+    validateJWT,
+    isAdminRole,
+    validarCampos
+], getBestSellingProducts);
+
+router.get('/client/bs', [
+    validateJWT,
+    isClientRole,
+    validarCampos
+], getBestSellingProducts);
+
 router.get('/:id', [
     validateJWT,
     isAdminRole,
     validarCampos
 ], getProductById);
+
+
 
 router.post('/', [
     validateJWT,

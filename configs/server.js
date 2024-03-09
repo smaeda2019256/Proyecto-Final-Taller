@@ -11,7 +11,8 @@ import productRoutes from '../src/products/producto.routes.js';
 import categoryRoutes from '../src/category/categoria.routes.js';
 import searchRoutes from '../src/products/buscarPYC.routes.js';
 import cartRoutes from '../src/cart/cart.routes.js';
-import facturaRoutes from '../src/factura.model.js/factura.routes.js';
+import facturaRoutes from '../src/factura/factura.routes.js';
+import saleRoutes from '../src/sale/sale.routes.js';
 
 class Server {
     constructor(){
@@ -24,6 +25,7 @@ class Server {
         this.searchPath = '/pf/v2/search';
         this.cartPath = '/pf/v2/cart';
         this.facturaPath = '/pf/v2/factura';
+        this.salePath = '/pf/v2/sale';
 
         this.conectarDB();
         this.middlewares();
@@ -50,6 +52,7 @@ class Server {
         this.app.use(this.searchPath, searchRoutes);
         this.app.use(this.cartPath, cartRoutes);
         this.app.use(this.facturaPath, facturaRoutes);
+        this.app.use(this.salePath, saleRoutes);
     }
 
     listen(){

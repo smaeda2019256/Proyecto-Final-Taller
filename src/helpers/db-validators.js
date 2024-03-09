@@ -2,7 +2,7 @@ import User from '../users/user.model.js';
 import Role from '../users/role.js';
 import Producto from '../products/producto.model.js';
 import Categoria from '../category/categoria.model.js';
-import Factura from '../factura.model.js/factura.model.js';
+import Factura from '../factura/factura.model.js';
 
 export const isRoleValid = async (rol = '') => {
     const existeRol = await Role.findOne({rol});

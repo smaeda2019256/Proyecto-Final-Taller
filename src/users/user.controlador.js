@@ -11,7 +11,7 @@ export const getUsers = async (req = request, res = response) => {
     ]);
 
     res.status(200).json({
-        msg: 'AGGREGATED Users',
+        msg: 'LIST --- AGGREGATED Users',
         listaUsers
     });
 }
@@ -46,60 +46,58 @@ export const postUserClient = async (req, res) => {
     });
 }
 
-export const putUserClient = async (req = request, res = response) => {
-    const { id } = req.params;
-    const { _id, estado, ...resto } = req.body;
-
-    if (!req.user || !_id || _id.toString() !== req.user.id.toString()) {
-        return res.status(401).json({
-            msg: 'You do not have permission to update this user'
-        });
-    }
-
-    if (resto.password) {
-        const salt = bcrypt.genSaltSync();
-        resto.password = bcrypt.hashSync(resto.password, salt);
-    }
-
+export const getUsersClients = async (req, res) => {
     try {
-        const userEdit = await User.findByIdAndUpdate(id, resto);
+        const users = await User.find({ rol: 'CLIENTE_ROLE' });
 
         res.status(200).json({
-            msg: 'User updated successfully',
-            userEdit
+            msg: 'LIST ---- USERS CLIENTS',
+            users
         });
     } catch (error) {
-        console.log(error);
+        console.error('Error getting users by role:', error);
         res.status(500).json({
-            msg: 'Internal server error'
+            error: 'Internal server error'
         });
     }
-}
+};
 
-
-
-
-export const deleteUserClient = async (req = request, res = response) => {
+export const putUserClient = async (req, res) => {
     try {
-        const { id } = req.params;
-        const { _id: userId, rol } = req.user;
-
-        if (rol !== 'CLIENTE_ROLE' || userId !== id) {
-            return res.status(403).json({ error: 'No tienes permiso para realizar esta acción' });
+        const userId = req.user.id;
+        const profileId = req.params.id; 
+        const { ...updateData } = req.body; 
+        
+        if (userId !== profileId) {
+            return res.status(403).json({ error: 'You do not have permission to update this profile' });
         }
 
-        // Eliminar el usuario
-        const userDel = await User.findByIdAndUpdate(id, { estado: false });
+        const updatedProfile = await User.findByIdAndUpdate(profileId, updateData, { new: true });
 
-        res.status(200).json({
-            msg: 'Usuario eliminado correctamente',
-            userDel
-        });
+        res.status(200).json({ message: 'User updated successfully', updatedProfile });
     } catch (error) {
-        console.error('Error al eliminar el usuario:', error);
-        res.status(500).json({ error: 'Error interno del servidor al eliminar el usuario' });
+        console.error('Error updating the user:', error);
+        res.status(500).json({ error: 'Internal server error' });
     }
-}
+};
+
+export const deleteUserClient = async (req, res) => {
+    try {
+        const userId = req.user.id; 
+        const profileId = req.params.id; 
+
+        if (userId !== profileId) {
+            return res.status(403).json({ error: 'You do not have permission to delete this profile' });
+        }
+
+        const deletedProfile = await User.findByIdAndDelete(profileId);
+
+        res.status(200).json({ message: 'Profile successfully deleted', deletedProfile });
+    } catch (error) {
+        console.error('Error deleting the user:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
 
 export const putUser = async (req = request, res = response) => {
     const {id} = req.params;

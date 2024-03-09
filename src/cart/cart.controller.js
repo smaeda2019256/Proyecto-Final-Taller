@@ -14,8 +14,15 @@ export const postCart = async (req, res) => {
                 message: "Product NOT IN EXISTENCE"
             });
         }
+        if (item.stock <= 0) {
+            return res.status(400).json({
+                message: "Out of stock"
+            });
+        }
 
         const idUser = req.user.id;
+
+        const user = req.user
         const { cart } = await User.findById(idUser);
 
         const existsInCart = cart.find((item) => item.itemId === itemId);
@@ -24,11 +31,18 @@ export const postCart = async (req, res) => {
             existsInCart.quantity += 1;
             existsInCart.name = item.name;
             existsInCart.precio = item.precio;
+            existsInCart.nameUser = user.name;
+            existsInCart.email = user.email;
+
         } else {
             cart.push({ itemId, quantity: 1 });
         }
 
+        item.stock -= 1;
+        await item.save();
+
         await User.findByIdAndUpdate(idUser, { cart });
+
         return res.status(200).json({
             message: "Product is ADDED to Cart"
         });
@@ -38,7 +52,8 @@ export const postCart = async (req, res) => {
             message: "ERROR | Internal Server"
         });
     }
-}
+};
+
 
 export const getCart = async (req, res) => {
     try {
@@ -92,11 +107,34 @@ export const deleteCart = async (req = request, res = response) => {
 
     try {
         const idUser = req.user.id;
-        const { cart } = await user.findById(idUser);
-        const cartUpd = cart.filter((item) => item.itemId !== itemId);
+        const user = await User.findById(idUser);
 
-        await User.findByIdAndUpdate(idUser, { cart: cartUpd });
-        return res.status(200).json({ message: "Item REMOVED from cart"});
+        if (!user) {
+            return res.status(404).json({
+                message: "User NOT FOUND"
+            });
+        }
+        const cartItem = user.cart.find(item => item.itemId === itemId);
+
+        if (!cartItem) {
+            return res.status(404).json({
+                message: "Product not found in the cart"
+            });
+        }
+        const product = await Product.findById(itemId);
+        if (!product) {
+            return res.status(404).json({
+                message: "Product NOT IN EXISTENCE"
+            });
+        }
+
+        product.stock += cartItem.quantity;
+        await product.save();
+
+        user.cart = user.cart.filter(item => item.itemId !== itemId);
+        await user.save();
+
+        return res.status(200).json({ message: "PRODUCT REMOVED from cart"});
     } catch (err) {
         console.log(err);
         return res.status(500).json({ message: "ERROR | Internal Server" });

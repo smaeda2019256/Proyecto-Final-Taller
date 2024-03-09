@@ -1,5 +1,6 @@
 import { response, request } from 'express';
 import Producto from './producto.model.js';
+import Sale from '../sale/sale.model.js';
 
 export const getProducts = async (req = request, res = response) => {
     const query = { estado: true };
@@ -17,6 +18,81 @@ export const getProducts = async (req = request, res = response) => {
     });
 
 }
+
+export const getSoldOutProducts = async (req = request, res = response) => {
+    try {
+        const query = {
+            estado: true,
+            stock: 0
+        };
+
+        const soldOutProducts = await Producto.find(query)
+            .populate('user', 'email')
+            .populate('category', 'name');
+
+        res.json({
+            msg: 'List - SOLD OUT PRODUCTS',
+            soldOutProducts
+        });
+    } catch (error) {
+        console.error('Error getting sold out products', error);
+        res.status(500).json({
+            error: 'Error in server'
+        });
+    }
+}
+
+export const getBestSellingProducts = async (req = request, res = response) => {
+    try {
+        const bestSellingProducts = await Sale.aggregate([
+            {
+                $group: {
+                    _id: '$product',
+                    totalSales: { $sum: '$cantidad' },
+                }
+            },
+            {
+                $lookup: {
+                    from: 'products',
+                    localField: '_id',
+                    foreignField: '_id',
+                    as: 'productInfo'
+                }
+            },
+            {
+                $project: {
+                    _id: 0,
+                    productId: '$_id',
+                    productName: { $arrayElemAt: ['$productInfo.name', 0] }, 
+                    totalSales: 1
+                }
+            },
+            {
+                $sort: { totalSales: -1 } 
+            }
+        ]);
+
+        // Convertir nombres de productos a minúsculas
+        bestSellingProducts.forEach(product => {
+            if (product.productName) {
+                product.productName = product.productName.toLowerCase();
+            }
+        });
+
+        res.json({
+            msg: 'List - BEST SELLING PRODUCTS',
+            bestSellingProducts
+        });
+    } catch (error) {
+        console.error('Error getting best selling products', error);
+        res.status(500).json({
+            error: 'Error in server'
+        });
+    }
+}
+
+
+
 
 
 export const postProducts = async (req = request, res = response) => {

@@ -17,7 +17,7 @@ const UserSchema = mongoose.Schema({
     rol: {
         type: String, 
         required: true, 
-        default: 'CLIENTE_ROL'
+        default: 'CLIENTE_ROLE'
     },
     estado: {
         type: Boolean,
