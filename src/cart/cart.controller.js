@@ -29,7 +29,7 @@ export const postCart = async (req, res) => {
         }
 
         await User.findByIdAndUpdate(idUser, { cart });
-        return res.status(500).json({
+        return res.status(200).json({
             message: "Product is ADDED to Cart"
         });
     } catch (error) {
@@ -91,7 +91,7 @@ export const deleteCart = async (req = request, res = response) => {
     const { itemId } = req.params;
 
     try {
-        const idUser = req.usuario.id;
+        const idUser = req.user.id;
         const { cart } = await user.findById(idUser);
         const cartUpd = cart.filter((item) => item.itemId !== itemId);
 
