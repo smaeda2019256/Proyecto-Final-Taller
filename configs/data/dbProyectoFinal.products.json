@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "65ed07b0c92f136fe0e5635b"
+  },
+  "name": "IPHONE 15",
+  "estado": true,
+  "user": {
+    "$oid": "65ed0109b41edd88614cfddb"
+  },
+  "precio": 12500.8,
+  "stock": 1,
+  "category": {
+    "$oid": "65ed01bab41edd88614cfdea"
+  },
+  "description": "Iphone 15 PRO MAX",
+  "disponible": true,
+  "ventas": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed07e0c92f136fe0e56364"
+  },
+  "name": "TRAPO",
+  "estado": true,
+  "user": {
+    "$oid": "65ed0109b41edd88614cfddb"
+  },
+  "precio": 5.8,
+  "stock": 0,
+  "category": {
+    "$oid": "65ed01b3b41edd88614cfde6"
+  },
+  "description": "Trapo limpiador clenex",
+  "disponible": true,
+  "ventas": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed19c7c80aa1e4f65c716d"
+  },
+  "name": "ESCOBA",
+  "estado": true,
+  "user": {
+    "$oid": "65ed0109b41edd88614cfddb"
+  },
+  "precio": 9.2,
+  "stock": 4,
+  "category": {
+    "$oid": "65ed01b3b41edd88614cfde6"
+  },
+  "description": "Escoba Maya",
+  "disponible": true,
+  "ventas": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ee356d04c28ed7c0d6f227"
+  },
+  "name": "PALA",
+  "estado": true,
+  "user": {
+    "$oid": "65ed0109b41edd88614cfddb"
+  },
+  "precio": 8.75,
+  "stock": 6,
+  "category": {
+    "$oid": "65ed01b3b41edd88614cfde6"
+  },
+  "description": "Pala all",
+  "disponible": true,
+  "ventas": 0,
+  "__v": 0
+}]

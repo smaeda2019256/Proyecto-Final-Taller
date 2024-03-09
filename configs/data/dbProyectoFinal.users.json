@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "65ed0109b41edd88614cfddb"
+  },
+  "name": "Santiago Maeda",
+  "email": "smaeda@gmail.com",
+  "password": "$2b$10$tIsakMNG3TeZ9rzJWmXUPOEx9e75h6vqXkkFQ/Ktb0ntomlVvyV.C",
+  "rol": "ADMIN_ROLE",
+  "estado": true,
+  "cart": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ee342604c28ed7c0d6f1bc"
+  },
+  "name": "Didier Estrada",
+  "email": "estrada@gmail.com",
+  "password": "$2b$10$do31QAxwkT1WrwRFKII39ujIkf0YHUbdnVuWxzYICuq7znGC/PZRK",
+  "rol": "CLIENTE_ROLE",
+  "estado": true,
+  "cart": [
+    {
+      "itemId": "65ed07e0c92f136fe0e56364",
+      "quantity": 3,
+      "name": "TRAPO",
+      "precio": 5.8,
+      "nameUser": "Didier Estrada",
+      "email": "estrada@gmail.com"
+    },
+    {
+      "itemId": "65ed07b0c92f136fe0e5635b",
+      "quantity": 2,
+      "name": "IPHONE 15",
+      "precio": 12500.8,
+      "nameUser": "Didier Estrada",
+      "email": "estrada@gmail.com"
+    },
+    {
+      "itemId": "65ed19c7c80aa1e4f65c716d",
+      "quantity": 2,
+      "name": "ESCOBA",
+      "precio": 9.2,
+      "nameUser": "Didier Estrada",
+      "email": "estrada@gmail.com"
+    },
+    {
+      "itemId": "65ee356d04c28ed7c0d6f227",
+      "quantity": 2,
+      "name": "PALA",
+      "precio": 8.75,
+      "nameUser": "Didier Estrada",
+      "email": "estrada@gmail.com"
+    }
+  ],
+  "__v": 0
+}]

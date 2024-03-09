@@ -1,0 +1,87 @@
+[{
+  "_id": {
+    "$oid": "65ee2ee90a73c3070ae4cf3e"
+  },
+  "user": {
+    "$oid": "65ee2e5f0a73c3070ae4cf29"
+  },
+  "product": {
+    "$oid": "65ed19c7c80aa1e4f65c716d"
+  },
+  "cantidad": 3,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ee2f300a73c3070ae4cf4f"
+  },
+  "user": {
+    "$oid": "65ee2e5f0a73c3070ae4cf29"
+  },
+  "product": {
+    "$oid": "65ed19c7c80aa1e4f65c716d"
+  },
+  "cantidad": 1,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ee319f5e838da68b10003f"
+  },
+  "user": {
+    "$oid": "65ee2e5f0a73c3070ae4cf29"
+  },
+  "product": {
+    "$oid": "65ed07e0c92f136fe0e56364"
+  },
+  "cantidad": 1,
+  "estado": true,
+  "cart": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ee320fe4b2199a2a871a6b"
+  },
+  "user": {
+    "$oid": "65ee2e5f0a73c3070ae4cf29"
+  },
+  "product": {
+    "$oid": "65ed07e0c92f136fe0e56364"
+  },
+  "cantidad": 1,
+  "estado": true,
+  "cart": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ee3269dc71f2bc25f10474"
+  },
+  "user": {
+    "$oid": "65ee2e5f0a73c3070ae4cf29"
+  },
+  "product": {
+    "$oid": "65ed07e0c92f136fe0e56364"
+  },
+  "cantidad": 1,
+  "estado": true,
+  "cart": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ee344704c28ed7c0d6f1c2"
+  },
+  "user": {
+    "$oid": "65ee342604c28ed7c0d6f1bc"
+  },
+  "product": {
+    "$oid": "65ed07e0c92f136fe0e56364"
+  },
+  "cantidad": 3,
+  "estado": true,
+  "__v": 0
+}]

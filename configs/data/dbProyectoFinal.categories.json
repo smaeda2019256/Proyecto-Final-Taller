@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "65ece8f1eec3b3164e41e373"
+  },
+  "name": "CATEGORY DEFAULT",
+  "estado": true,
+  "user": {
+    "$oid": "65ebb8a1f5fffb140a25ac3a"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed01b3b41edd88614cfde6"
+  },
+  "name": "LIMPIEZA",
+  "estado": true,
+  "user": {
+    "$oid": "65ed0109b41edd88614cfddb"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed01bab41edd88614cfdea"
+  },
+  "name": "TECNOLOGIA",
+  "estado": true,
+  "user": {
+    "$oid": "65ed0109b41edd88614cfddb"
+  },
+  "__v": 0
+}]
