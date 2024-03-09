@@ -31,6 +31,10 @@ const ProductSchema = new mongoose.Schema({
     },
     description: { type: String },
     disponible: { type: Boolean, default: true },
+    ventas: {
+        type: Number,
+        default: 0
+    }
 });
 
 export default mongoose.model('Producto', ProductSchema);

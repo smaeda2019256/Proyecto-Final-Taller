@@ -18,13 +18,26 @@ export const getFacturas = async (req = request, res = response) => {
 }
 
 
-export const getFacturaPorId = async (req = request, res = response) => {
+export const getFacturasUsuarioEspecifico = async (req, res) => {
+  try {
+    const { userId } = req.params;
 
-  const { id } = req.params;
-  const facturaById = await Factura.findById(id)
-  res.status(201).json(facturaById);
+    const usuario = await User.findById(userId);
 
+    if (!usuario) {
+      return res.status(404).json({ error: 'Usuario no encontrado' });
+    }
+
+    const facturas = await Factura.find({ user: userId });
+
+    res.status(200).json({ facturas });
+  } catch (error) {
+    console.error('Error al obtener las facturas del usuario:', error);
+    res.status(500).json({ error: 'Error al obtener las facturas del usuario' });
+  }
 }
+
+
 
 
 const generarNumeroFactura = () => {

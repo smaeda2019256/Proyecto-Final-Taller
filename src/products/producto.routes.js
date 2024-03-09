@@ -8,7 +8,13 @@ import { existProductById } from "../helpers/db-validators.js";
 
 const router = Router();
 
-router.get('/', getProducts );
+router.get('/', [validateJWT, isAdminRole, validarCampos], getProducts );
+
+router.get('/:id', [
+    validateJWT,
+    isAdminRole,
+    validarCampos
+], getProductById);
 
 router.post('/', [
     validateJWT,
@@ -33,5 +39,6 @@ router.delete('/:id', [
     check('id').custom( existProductById ),
     validarCampos
 ], deleteProducto);
+
 
 export default router;

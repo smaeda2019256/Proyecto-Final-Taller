@@ -1,90 +1,93 @@
 {
     "client": "Thunder Client",
     "collectionName": "Users",
-    "dateExported": "2024-03-08T16:45:35.159Z",
+    "dateExported": "2024-03-09T05:39:56.017Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "6afa5aea-3182-4429-878c-9f990b11f375",
-            "colId": "968852fe-6ffa-416b-9652-4d623e8d5a01",
+            "_id": "74f11fd7-4639-4647-9ac9-e02cdf37a421",
+            "colId": "6e5950d5-fa27-4026-ac8f-ab5d8a1045fa",
             "containerId": "",
             "name": "POST User",
             "url": "localhost:3000/pf/v2/users",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-08T13:17:01.325Z",
-            "modified": "2024-03-08T16:26:08.390Z",
+            "created": "2024-03-07T01:59:57.892Z",
+            "modified": "2024-03-09T01:17:21.165Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"name\": \"Didier Estrada\",\n    \"email\": \"destrada@gmail.com\",\n    \"password\": \"123456\",\n    \"rol\": \"CLIENTE_ROLE\"\n}",
+                "raw": "{\n    \"name\": \"Santiago Maeda\",\n    \"email\": \"smaeda@gmail.com\",\n    \"password\": \"123456\",\n    \"rol\": \"ADMIN_ROLE\"\n}",
                 "form": []
             },
             "reqType": "post",
             "tests": []
         },
         {
-            "_id": "2f03a707-14c5-47de-a595-df8f3b793862",
-            "colId": "968852fe-6ffa-416b-9652-4d623e8d5a01",
+            "_id": "4e726d6a-c0d0-4a6d-a2d0-b71721c2536d",
+            "colId": "6e5950d5-fa27-4026-ac8f-ab5d8a1045fa",
             "containerId": "",
             "name": "GET Users",
             "url": "localhost:3000/pf/v2/users",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-03-08T13:17:01.327Z",
-            "modified": "2024-03-08T13:17:01.327Z",
+            "created": "2024-03-07T02:03:06.615Z",
+            "modified": "2024-03-09T04:57:39.392Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU5MjAzZGY0N2EwZmY1Mjg4Njc0NzUiLCJuYW1lIjoiU2FudGlhZ28gTWFlZGEiLCJjYXJ0IjpbXSwiaWF0IjoxNzA5Nzg1NDA2LCJleHAiOjE3MDk3ODkwMDZ9.IxGMbAsipIMA7U9BzJlq-F832WR7bFTm3YGjvZu0ngw"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViYjhhMWY1ZmZmYjE0MGEyNWFjM2EiLCJuYW1lIjoiU2FudGlhZ28gTWFlZGEiLCJjYXJ0IjpbXSwiaWF0IjoxNzA5OTYwMjQzLCJleHAiOjE3MDk5NjM4NDN9.9RYLnop9qZjVlR9iXTbPvhDq3UVu_BqyJy-6e4oRKE0"
                 }
             ],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
-            "_id": "94a9dae2-ec15-4522-867d-d39a981d5984",
-            "colId": "968852fe-6ffa-416b-9652-4d623e8d5a01",
+            "_id": "f14c4fcb-49e4-4903-9e7d-d14acb60ef11",
+            "colId": "6e5950d5-fa27-4026-ac8f-ab5d8a1045fa",
             "containerId": "",
             "name": "PUT Users",
-            "url": "localhost:3000/pf/v2/users/65ea5c2b73b536e16d37eef9",
+            "url": "localhost:3000/pf/v2/users/65ebf29ddc8c3b92cda7b493",
             "method": "PUT",
             "sortNum": 30000,
-            "created": "2024-03-08T13:17:01.328Z",
-            "modified": "2024-03-08T13:17:01.328Z",
+            "created": "2024-03-07T02:04:54.203Z",
+            "modified": "2024-03-09T05:38:04.171Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhNWMyYjczYjUzNmUxNmQzN2VlZjkiLCJuYW1lIjoiU3RlcGggQ3VycnkiLCJjYXJ0IjpbXSwiaWF0IjoxNzA5ODczMDkxLCJleHAiOjE3MDk4NzY2OTF9.HxS4NHzeROmAp_U_0gMl60gCpebjGaj67gQdR0GlM0A"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViYjhhMWY1ZmZmYjE0MGEyNWFjM2EiLCJuYW1lIjoiU2FudGlhZ28gTWFlZGEiLCJjYXJ0IjpbXSwiaWF0IjoxNzA5OTYwMjQzLCJleHAiOjE3MDk5NjM4NDN9.9RYLnop9qZjVlR9iXTbPvhDq3UVu_BqyJy-6e4oRKE0"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"name\": \"Yamar Cole\",\n    \"email\": \"cole@gmail.com\",\n    \"password\": \"123456\",\n    \"rol\": \"CLIENTE_ROLE\"\n}",
+                "raw": "{\n    \"name\": \"Didier Estrada\",\n    \"email\": \"estrada@gmail.com\",\n    \"password\": \"123456\",\n    \"rol\": \"CLIENTE_ROLE\"\n}",
                 "form": []
             },
+            "reqType": "put",
             "tests": []
         },
         {
-            "_id": "72c6d53d-2099-4de5-a39d-78bccd90134a",
-            "colId": "968852fe-6ffa-416b-9652-4d623e8d5a01",
+            "_id": "ec4c3676-a2f3-4c7b-adac-15899c2e9966",
+            "colId": "6e5950d5-fa27-4026-ac8f-ab5d8a1045fa",
             "containerId": "",
             "name": "DELETE Users",
             "url": "localhost:3000/pf/v2/users/delete/65ea5f1582a265dd31fb7d66",
             "method": "DELETE",
             "sortNum": 50000,
-            "created": "2024-03-08T13:17:01.329Z",
-            "modified": "2024-03-08T13:17:01.329Z",
+            "created": "2024-03-07T04:09:09.286Z",
+            "modified": "2024-03-09T04:57:16.346Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU5MjAzZGY0N2EwZmY1Mjg4Njc0NzUiLCJuYW1lIjoiU2FudGlhZ28gTWFlZGEiLCJjYXJ0IjpbXSwiaWF0IjoxNzA5ODU4NTk5LCJleHAiOjE3MDk4NjIxOTl9.HgMwRSnQAY-U2RtTB4z7DxVf60ZYlSNfP0tdrTUKS2I"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViYjg1NmY1ZmZmYjE0MGEyNWFjMzMiLCJuYW1lIjoiRGlkaWVyIEVzdHJhZGEiLCJjYXJ0IjpbeyJpdGVtSWQiOiI2NWViYmE2YmY1ZmZmYjE0MGEyNWFjNTIiLCJxdWFudGl0eSI6NSwibmFtZSI6IlNBTVNVTkcgRkUgMjEiLCJwcmVjaW8iOjQ1MDB9LHsiaXRlbUlkIjoiNjVlYmJhYzJmNWZmZmIxNDBhMjVhYzY2IiwicXVhbnRpdHkiOjMsIm5hbWUiOiJQQUxBIiwicHJlY2lvIjoxMH1dLCJpYXQiOjE3MDk5NjAyMTEsImV4cCI6MTcwOTk2MzgxMX0.GUVmbKxaI_TLk04GH-11mCDjZMICPSD4PD8QS2G9iAY"
                 }
             ],
             "params": [],
+            "reqType": "del",
             "tests": []
         }
     ]

@@ -1,0 +1,66 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Factura",
+    "dateExported": "2024-03-09T05:40:24.265Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "eec41afb-83e3-4bfe-975f-496cbbe7ceaa",
+            "colId": "4f4f0594-1464-49fb-8488-a62717899772",
+            "containerId": "",
+            "name": "POST Factura",
+            "url": "localhost:3000/pf/v2/factura/65ebd5c31db25b3c3fe3f162",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-09T00:08:19.895Z",
+            "modified": "2024-03-09T03:26:31.189Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViZDVjMzFkYjI1YjNjM2ZlM2YxNjIiLCJuYW1lIjoiTWFudWVsIExvcGV6IiwiY2FydCI6IiIsImlhdCI6MTcwOTk1NDUwOSwiZXhwIjoxNzA5OTU4MTA5fQ.zgSnhFdG3SzdyehoDltMAaFYio4ihjp5tH8-kPOkmEE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "04234a28-7d88-437d-9976-8167a40f681c",
+            "colId": "4f4f0594-1464-49fb-8488-a62717899772",
+            "containerId": "",
+            "name": "GET Facturas",
+            "url": "localhost:3000/pf/v2/factura",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-09T00:31:31.697Z",
+            "modified": "2024-03-09T03:28:25.564Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViZDVjMzFkYjI1YjNjM2ZlM2YxNjIiLCJuYW1lIjoiTWFudWVsIExvcGV6IiwiY2FydCI6IiIsImlhdCI6MTcwOTk1NDUwOSwiZXhwIjoxNzA5OTU4MTA5fQ.zgSnhFdG3SzdyehoDltMAaFYio4ihjp5tH8-kPOkmEE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c2b5ce87-66c3-4421-9847-ce7d8e07e3ed",
+            "colId": "4f4f0594-1464-49fb-8488-a62717899772",
+            "containerId": "",
+            "name": "GET Factura User (ADMIN)",
+            "url": "localhost:3000/pf/v2/factura/65ebb856f5fffb140a25ac33",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-09T03:41:42.428Z",
+            "modified": "2024-03-09T04:00:45.197Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViYjhhMWY1ZmZmYjE0MGEyNWFjM2EiLCJuYW1lIjoiU2FudGlhZ28gTWFlZGEiLCJjYXJ0IjpbXSwiaWF0IjoxNzA5OTU1ODMwLCJleHAiOjE3MDk5NTk0MzB9.KUODXrX_WFKg5rxKUGB5Dq2CBGQByRZdl1JLoupVRh8"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

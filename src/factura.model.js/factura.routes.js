@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
-import { getFacturaPorId, getFacturas, postFactura } from './factura.controller.js';
+import { getFacturasUsuarioEspecifico, getFacturas, postFactura } from './factura.controller.js';
 import { validateJWT } from '../middlewares/validar-jwt.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
-import { existsFacturaById } from '../helpers/db-validators.js';
+import { isAdminRole } from "../middlewares/validar-roles.js";
 
 const router = Router();
 
@@ -13,11 +13,11 @@ router.get('/',[
 ], getFacturas );
 
 
-router.get('/:id', [
-    check('id', 'No es un id de Mongo Válido').isMongoId(),
-    check('id').custom( existsFacturaById ),
+router.get('/:userId', [
+    validateJWT,
+    isAdminRole,
     validarCampos
-], getFacturaPorId );
+], getFacturasUsuarioEspecifico);
 
 router.post('/:id', [
     validateJWT,

@@ -41,6 +41,20 @@ export const searchForCategory = async (termino='', res) => {
     })
 }
 
+export const getProductosMasVendidos = async (req, res) => {
+    try {
+
+        const productosMasVendidos = await Product.find({})
+            .sort({ ventas: -1 })
+            .limit(10); 
+        
+        res.status(200).json({ productosMasVendidos });
+    } catch (error) {
+        console.error('Error fetching top selling products:', error);
+        res.status(500).json({ error: 'Error fetching top selling products' });
+    }
+}
+
 export const search = (req, res) => {
     const {colection, termino} = req.params;
 

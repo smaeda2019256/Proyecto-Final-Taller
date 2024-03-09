@@ -1,25 +1,50 @@
 {
     "client": "Thunder Client",
     "collectionName": "Client",
-    "dateExported": "2024-03-08T16:45:50.598Z",
+    "dateExported": "2024-03-09T05:40:02.171Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "8d895d38-7b43-4493-ac3e-1f59f20a7c69",
-            "colId": "de3daa92-01a9-4541-b3a4-eb9d6cf040bb",
+            "_id": "89d220f2-8f2c-452b-8e9c-44a9eea718e0",
+            "colId": "8063661b-c2c5-4aa9-833b-8f989af5ee97",
             "containerId": "",
             "name": "POST Clients",
             "url": "localhost:3000/pf/v2/users/client",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-08T13:17:01.294Z",
-            "modified": "2024-03-08T13:17:01.294Z",
+            "created": "2024-03-08T00:15:15.018Z",
+            "modified": "2024-03-09T05:24:45.517Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"name\": \"jose perez\",\n    \"email\": \"jperez@gmail.com\",\n    \"password\": \"123456\"\n}",
+                "raw": "{\n    \"name\": \"Jose Peralta\",\n    \"email\": \"peralta@gmail.com\",\n    \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "50a3abb7-83ac-4743-83db-c1fae4dbca75",
+            "colId": "8063661b-c2c5-4aa9-833b-8f989af5ee97",
+            "containerId": "",
+            "name": "PUT Clients",
+            "url": "localhost:3000/pf/v2/users/client/65ebf29ddc8c3b92cda7b493",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-03-09T05:14:41.614Z",
+            "modified": "2024-03-09T05:33:51.573Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViZjI5ZGRjOGMzYjkyY2RhN2I0OTMiLCJuYW1lIjoiSm9zZSBQZXJhbHRhIiwiY2FydCI6W10sImlhdCI6MTcwOTk2MTg5MiwiZXhwIjoxNzA5OTY1NDkyfQ.MyHQn0s2fa1_POfmE_wPSiesf1AAtnwSZx4DzCw5XEM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Hola Lopez\",\n    \"email\": \"destrada@gmail.com\"\n}",
                 "form": []
             },
             "tests": []

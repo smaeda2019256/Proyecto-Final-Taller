@@ -18,6 +18,7 @@ export const getProducts = async (req = request, res = response) => {
 
 }
 
+
 export const postProducts = async (req = request, res = response) => {
     const { estado, user, ...body } = req.body;
     const productDB = await Producto.findOne({ name: body.name });
